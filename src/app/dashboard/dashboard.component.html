@@ -1,0 +1,16 @@
+<div class="text-center" style="padding: 1em;">
+    <h2><b>Users List </b></h2>
+    </div><mat-card *ngFor="let user of users.userlist">
+    <ul>
+      <li>
+        <a> <label><b>Name:-</b> </label> {{ user.name }}</a>
+        <ul>
+          <li><label>Email:- </label> {{ user.email }}</li>
+          <li><label>Birth Date:- </label> {{ user.Bdate }}</li>
+          <li><label>Phone Number:- </label> {{ user.phnum }}</li>
+          <li><label>Gender: </label> {{ user.gender }}</li>
+          <li><label>Address: </label> {{ user.address }}</li>
+        </ul>
+      </li>
+    </ul>
+</mat-card>

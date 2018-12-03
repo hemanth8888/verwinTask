@@ -1,0 +1,63 @@
+<div class="text-center" style="padding: 1em;">
+<h2><b>Registration Form </b></h2>
+</div>
+
+<mat-card>
+<form (ngSubmit)="onSubmit()" class="m-form m-form--fit m-form--label-align-right" [formGroup]="taskForm" id="m_form_1">
+  <div class="col-md-12 row">
+    <div class="col-md-6">
+       <mat-form-field>
+       <input matInput placeholder="Name" [(ngModel)]="data.name" formControlName="name" required>
+       <mat-error *ngIf="name.hasError('required')"> Enter Name </mat-error>
+     </mat-form-field>
+   </div>
+   <div class="col-md-6">
+       <mat-form-field>
+           <input matInput [matDatepicker]="picker" placeholder="Choose DOB" [(ngModel)]="data.Bdate" formControlName="Bdate" required>
+           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+           <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+         </mat-form-field>
+   </div>
+   
+   <div class="col-md-6">
+       <mat-form-field>
+       <input matInput placeholder="Email" [(ngModel)]="data.email" formControlName="email" required>
+       <mat-error *ngIf="email.hasError('required')"> Enter email </mat-error>
+     </mat-form-field>
+   </div>
+   <div class="col-md-6">
+       <mat-form-field>
+       <input matInput placeholder="Phone 1" [(ngModel)]="data.phnum" formControlName="phnum" required>
+       <mat-error *ngIf="phnum.hasError('required')"> Enter phnum </mat-error>
+     </mat-form-field>
+   </div>
+   <div class="col-md-6" style="margin-top: 1em;">
+       <section class="example-section">
+           <label class="example-margin">Gender:</label>
+           <mat-radio-group [(ngModel)]="data.gender" formControlName="gender">
+             <mat-radio-button class="example-margin" value="Male">Male</mat-radio-button>
+             <mat-radio-button class="example-margin" value="Female">Female</mat-radio-button>
+           </mat-radio-group>
+         </section>
+   </div>
+   <div class="col-md-6">
+     <mat-form-field>
+       <textarea matInput placeholder="Address" [(ngModel)]="data.address" formControlName="address" required></textarea>
+       <mat-error *ngIf="address.hasError('required')"> Enter address </mat-error>
+     </mat-form-field>
+   </div>
+   <div class="col-md-6">
+     <mat-form-field>
+       <mat-select placeholder="Status" [(ngModel)]="data.statuss" formControlName="statuss" required>
+         <mat-option *ngFor="let  status of  statusdata" [value]="status">
+            {{ status}} 
+         </mat-option>
+       </mat-select>
+     </mat-form-field>
+   </div>
+   </div>
+   <div class='col-md-12 btn-row text-center'>
+    <button mat-button type="submit" class="btn btn-primary" (click)="onSubmit()"> Submit </button>
+  </div>
+  </form>
+</mat-card>
