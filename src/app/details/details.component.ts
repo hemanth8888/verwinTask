@@ -71,8 +71,43 @@ statusdata= ["Add","Update","delete"];
      toggleAnimation(){
                  this._router.navigate(['dash']);
            }
-    
+    //copy code starts hear
+listProducts() {
+ var products = [
+    {
+      name: "chair",
+      inventory: 5,
+      unit_price: 45.99
+    },
+    {
+      name: "table",
+      inventory: 10,
+      unit_price: 123.75
+    },
+    {
+      name: "sofa",
+      inventory: 2,
+      unit_price: 399.50
+    }
+  ];
 
+  let product_names = [];
+  for (let i=0; i<products.length; i+=1) {
+   product_names.push(products[i].name);
+  }
+  let testObj = products[0].name;
+  let testObj2 = JSON.stringify(products);
+  console.log("Products_NAME", testObj);
+  console.log("_______________________");
+  console.log(testObj2);
+  console.log("_______________________")
+  var dummy = $('<input>').val(testObj2).appendTo('body').select()
+ document.execCommand('copy');
+  
+  // return product_names;
+  
+}
+  //end of copy
   }
 
 
