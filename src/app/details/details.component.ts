@@ -75,7 +75,7 @@ statusdata= ["Add","Update","delete"];
   }
 
 
-export class taskData { 
+class taskData { 
 	name: string;
 	Bdate: string;
   email: string;
